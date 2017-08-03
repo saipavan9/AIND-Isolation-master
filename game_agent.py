@@ -1036,14 +1036,14 @@ class MinimaxPlayer(IsolationPlayer):
         legal_moves = game.get_legal_moves()
 
         if not legal_moves:
-            return (-1, -1)
+            return (-1,-1)
 
         # If we started the game.Take the center move.
         if game.move_count == 0:
             return(int(game.height/2), int(game.width/2))
 
         #Search for a good move!
-        best_move_so_far = (-1, -1)
+        best_move_so_far = legal_moves[0]
 
         try:
             """
@@ -1060,7 +1060,7 @@ class MinimaxPlayer(IsolationPlayer):
                 _, best_move_so_far = self.minimax(game, self.search_depth)
 
         except Timeout:
-            # Handle any actions required at timeout, if necessary
+            # Handle any actions required at timeout, if necessar
             pass
 
         return best_move_so_far
@@ -1108,7 +1108,7 @@ class MinimaxPlayer(IsolationPlayer):
                 return float("inf"), (-1, -1)
          #If legal moves left and reached the target search depth ,return the best possible move at this level.
         lowest_score_so_far, highest_score_so_far = float("inf"), float("-inf")
-        best_move_so_far = (-1, -1)
+        best_move_so_far = legal_moves[0]
         if depth == 1:
             if maximizing_player == True:
                 for move in legal_moves:
@@ -1195,7 +1195,7 @@ class AlphaBetaPlayer(IsolationPlayer):
             return(int(game.height/2), int(game.width/2))
 
         #Search for a good move!
-        best_move_so_far = (-1, -1)
+        best_move_so_far = legal_moves[0]
 
         try:
             """
@@ -1215,7 +1215,7 @@ class AlphaBetaPlayer(IsolationPlayer):
                
         except Timeout:
             # Handle any actions required at timeout, if necessary
-            pass
+            pass  
         return best_move_so_far
 
     def alphabeta(self, game, depth, alpha=float("-inf"), beta=float("inf"), maximizing_player=True):
@@ -1278,7 +1278,7 @@ class AlphaBetaPlayer(IsolationPlayer):
             
         """
         lowest_score_so_far, highest_score_so_far = float("inf"), float("-inf")
-        best_move_so_far = (-1, -1)
+        best_move_so_far = legal_moves[0]
         if depth == 1:
             if maximizing_player == True:
                 for move in legal_moves:
