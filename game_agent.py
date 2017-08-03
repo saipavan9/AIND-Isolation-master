@@ -1064,7 +1064,6 @@ class MinimaxPlayer(IsolationPlayer):
             # Handle any actions required at timeout, if necessary
             pass
 
-        # Return the best move from the last completed search iteration
         return best_move_so_far
 
     def minimax(self, game, depth, maximizing_player=True):
@@ -1219,8 +1218,6 @@ class AlphaBetaPlayer(IsolationPlayer):
         except Timeout:
             # Handle any actions required at timeout, if necessary
             pass
-
-        # Return the best move from the last completed search iteration
         return best_move_so_far
 
     def alphabeta(self, game, depth, alpha=float("-inf"), beta=float("inf"), maximizing_player=True):
