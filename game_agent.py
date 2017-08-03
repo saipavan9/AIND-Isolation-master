@@ -985,7 +985,7 @@ class IsolationPlayer:
     """
 
     def __init__(self, search_depth=3, score_fn=custom_score,
-                 iterative=True, method='minimax', timeout=10.):
+                 iterative=True, method='minimax', timeout=15.):
         self.search_depth = search_depth
         self.iterative = iterative
         self.score = score_fn
@@ -1056,7 +1056,6 @@ class MinimaxPlayer(IsolationPlayer):
                     best_score_so_far, best_move_so_far = self.minimax(game, iterative_search_depth)
                     if best_score_so_far == float("inf") or best_score_so_far == float("-inf"):
                         break
-                    iterative_search_depth += 1
             else:    
                 _, best_move_so_far = self.minimax(game, self.search_depth)
 
@@ -1205,12 +1204,11 @@ class AlphaBetaPlayer(IsolationPlayer):
             """
             if self.iterative == True:
                 iterative_search_depth = 1
-                if self.method == 'alphabeta':
-                    while True:
-                        best_score_so_far, best_move_so_far = self.alphabeta(game, iterative_search_depth)
-                        if best_score_so_far == float("inf") or best_score_so_far == float("-inf"):
-                            break
-                        iterative_search_depth += 1
+                while True:
+                    best_score_so_far, best_move_so_far = self.alphabeta(game, iterative_search_depth)
+                    if best_score_so_far == float("inf") or best_score_so_far == float("-inf"):
+                        break
+                    iterative_search_depth += 1
             else:
                 
                  _, best_move_so_far = self.alphabeta(game, self.search_depth)
