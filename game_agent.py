@@ -110,41 +110,6 @@ def gameStrategy1(game, player):
     float
         The heuristic value of the current game state to the specified player.
 
-        
-        Playing Matches:
-        ----------
-
-        Match 1: ID_Improved vs   Random      Result: 16 to 4
-        Match 2: ID_Improved vs   MM_Null     Result: 13 to 7
-        Match 3: ID_Improved vs   MM_Open     Result: 13 to 7
-        Match 4: ID_Improved vs MM_Improved   Result: 13 to 7
-        Match 5: ID_Improved vs   AB_Null     Result: 11 to 9
-        Match 6: ID_Improved vs   AB_Open     Result: 10 to 10
-        Match 7: ID_Improved vs AB_Improved   Result: 13 to 7
-
-        Results:
-        ----------
-        ID_Improved         63.57%
-
-        *************************
-        Evaluating: Student
-        *************************
-
-        Playing Matches:
-        ----------
-        Match 1:   Student   vs   Random      Result: 18 to 2
-        Match 2:   Student   vs   MM_Null     Result: 16 to 4
-        Match 3:   Student   vs   MM_Open     Result: 13 to 7
-        Match 4:   Student   vs MM_Improved   Result: 12 to 8
-        Match 5:   Student   vs   AB_Null     Result: 14 to 6
-        Match 6:   Student   vs   AB_Open     Result: 10 to 10
-        Match 7:   Student   vs AB_Improved   Result: 15 to 5
-
-
-        Results:
-        ----------
-        Student             70.00%
-
     """
 
     # Have we won the game?
@@ -182,41 +147,6 @@ def gameStrategy2(game, player):
     -------
     float
         The heuristic value of the current game state to the specified player.
-
-
-Playing Matches:
-----------
-  Match 1: ID_Improved vs   Random      Result: 18 to 2
-  Match 2: ID_Improved vs   MM_Null     Result: 14 to 6
-  Match 3: ID_Improved vs   MM_Open     Result: 13 to 7
-  Match 4: ID_Improved vs MM_Improved   Result: 12 to 8
-  Match 5: ID_Improved vs   AB_Null     Result: 15 to 5
-  Match 6: ID_Improved vs   AB_Open     Result: 13 to 7
-  Match 7: ID_Improved vs AB_Improved   Result: 11 to 9
-
-
-Results:
-----------
-ID_Improved         68.57%
-
-*************************
-   Evaluating: Student
-*************************
-
-Playing Matches:
-----------
-  Match 1:   Student   vs   Random      Result: 16 to 4
-  Match 2:   Student   vs   MM_Null     Result: 15 to 5
-  Match 3:   Student   vs   MM_Open     Result: 17 to 3
-  Match 4:   Student   vs MM_Improved   Result: 14 to 6
-  Match 5:   Student   vs   AB_Null     Result: 13 to 7
-  Match 6:   Student   vs   AB_Open     Result: 13 to 7
-  Match 7:   Student   vs AB_Improved   Result: 12 to 8
-
-
-Results:
-----------
-Student             71.43%
 
     """
 
@@ -268,40 +198,6 @@ def gameStrategy3(game, player):
     -------
     float
         The heuristic value of the current game state to the specified player.
-    Playing Matches:
-----------
-  Match 1: ID_Improved vs   Random      Result: 16 to 4
-  Match 2: ID_Improved vs   MM_Null     Result: 17 to 3
-  Match 3: ID_Improved vs   MM_Open     Result: 14 to 6
-  Match 4: ID_Improved vs MM_Improved   Result: 12 to 8
-  Match 5: ID_Improved vs   AB_Null     Result: 15 to 5
-  Match 6: ID_Improved vs   AB_Open     Result: 14 to 6
-  Match 7: ID_Improved vs AB_Improved   Result: 11 to 9
-
-
-Results:
-----------
-ID_Improved         70.71%
-
-*************************
-   Evaluating: Student
-*************************
-
-Playing Matches:
-----------
-  Match 1:   Student   vs   Random      Result: 17 to 3
-  Match 2:   Student   vs   MM_Null     Result: 15 to 5
-  Match 3:   Student   vs   MM_Open     Result: 15 to 5
-  Match 4:   Student   vs MM_Improved   Result: 13 to 7
-  Match 5:   Student   vs   AB_Null     Result: 14 to 6
-  Match 6:   Student   vs   AB_Open     Result: 16 to 4
-  Match 7:   Student   vs AB_Improved   Result: 10 to 10
-
-
-Results:
-----------
-Student             71.43%
-
 
     """
 
