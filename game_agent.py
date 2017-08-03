@@ -262,42 +262,6 @@ def gameStrategy4(game, player):
     -------
     float
         The heuristic value of the current game state to the specified player.
-
-    
-Playing Matches:
-----------
-  Match 1: ID_Improved vs   Random      Result: 17 to 3
-  Match 2: ID_Improved vs   MM_Null     Result: 16 to 4
-  Match 3: ID_Improved vs   MM_Open     Result: 9 to 11
-  Match 4: ID_Improved vs MM_Improved   Result: 9 to 11
-  Match 5: ID_Improved vs   AB_Null     Result: 12 to 8
-  Match 6: ID_Improved vs   AB_Open     Result: 14 to 6
-  Match 7: ID_Improved vs AB_Improved   Result: 8 to 12
-
-
-Results:
-----------
-ID_Improved         60.71%
-
-*************************
-   Evaluating: Student
-*************************
-
-Playing Matches:
-----------
-  Match 1:   Student   vs   Random      Result: 18 to 2
-  Match 2:   Student   vs   MM_Null     Result: 20 to 0
-  Match 3:   Student   vs   MM_Open     Result: 17 to 3
-  Match 4:   Student   vs MM_Improved   Result: 15 to 5
-  Match 5:   Student   vs   AB_Null     Result: 17 to 3
-  Match 6:   Student   vs   AB_Open     Result: 13 to 7
-  Match 7:   Student   vs AB_Improved   Result: 10 to 10
-
-
-Results:
-----------
-Student             78.57%
-
    
     """
 
@@ -1088,16 +1052,12 @@ class MinimaxPlayer(IsolationPlayer):
             """
             if self.iterative == True:
                 iterative_search_depth = 1
-                if self.method == 'minimax':
-                    while True:
-                        best_score_so_far, best_move_so_far = self.minimax(game, iterative_search_depth)
-                        if best_score_so_far == float("inf") or best_score_so_far == float("-inf"):
-                            break
-                        iterative_search_depth += 1
-                else:
-                    raise ValueError('ERR in CustomPlayer.get_move() - invalid param')
-            else:
-                
+                while True:
+                    best_score_so_far, best_move_so_far = self.minimax(game, iterative_search_depth)
+                    if best_score_so_far == float("inf") or best_score_so_far == float("-inf"):
+                        break
+                    iterative_search_depth += 1
+            else:    
                 _, best_move_so_far = self.minimax(game, self.search_depth)
 
         except Timeout:
@@ -1141,6 +1101,7 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise Timeout()
         # Check for the legal moves
+        best_move_so_far = (-1,-1)
         legal_moves = game.get_legal_moves()
         if not legal_moves:
             if maximizing_player == True:
